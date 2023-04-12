@@ -1,50 +1,17 @@
-const todoList = [];
+let addButton = document.getElementById('add');
+let toDoContainer = document.getElementById('to-do-container');
+let inputField = document.getElementById('task');
 
-/*window.onload = function() {
-    document.getElementById('add');
-}*/
-
-/*window.addEventListener('load', function functionName(){
-
-})*/
-
-document.getElementById('add').addEventListener('click', function() {
-    var value = document.getElementById('task').value;
-    
-    if(value){
-       console.log('Task added!');
-       addTask(value);
-    }
-    
-})
-
-function addTask(text){
-    var task = document.createElement('li');
-    task.innerText = text;
-}
-
-var buttons = document.createElement('div');
-buttons.classList.add('buttons');
-
-var complete = document.createElement('buttons');
-complete.classList.add('complete');
-
-var remove = document.createElement('buttons');
-remove.classList.add('remove');
-
-/*const addTask = (task) => {
-    let task;
-
-    todoList.push(task);
-    //console.log(todoList);
-};*/
-
-/*const removeTask = () => {
-    let task;
-
-    todoList.pop(task);
-}*/
-
-/*const printList = () => {
-    print
-}*/
+addButton.addEventListener('click', function(){
+    var paragraph = document.createElement('p');
+    paragraph.classList.add('paragraph-styling');
+    paragraph.innerText = inputField.value;
+    toDoContainer.appendChild(paragraph);
+    inputField.value = "";
+    paragraph.addEventListener('click', function(){
+        paragraph.style.textDecoration = "line-through";
+    });
+    paragraph.addEventListener('dblclick', function(){
+        paragraph.removeChild(paragraph);
+    });
+});
