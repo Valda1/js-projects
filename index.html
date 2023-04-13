@@ -9,12 +9,23 @@
 
 <body>
 
-    <h1>To Do List</h1>
-
     <div class="container">
-        <input type="text" placeholder="Enter new task" id="task">
-        <button id="add">+</button>
-        <div class="to-does" id="to-do-container"></div>
+        <div class="todo-app">
+            <h1>To Do List</h1>
+
+            <div class="row">
+                <input id="input-box" type="text" placeholder="Enter new task">
+                <button id="add-button" onclick="addTask()">Add</button>
+            </div>
+
+            <ul id="list-container">
+               <!--<li>
+
+                </li>--> 
+            </ul>
+
+        </div>
+
     </div>
 
 
