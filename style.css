@@ -7,6 +7,10 @@
     box-sizing: border-box;
 }
 
+body{
+    counter-reset: my-counter;
+}
+
 .container{
     width: 100%;
     min-height: 100vh;
@@ -86,11 +90,6 @@ span button{
     outline: none;
     cursor: pointer;
 }
-
-/*ul li.checked{
-    color: #555;
-    text-decoration: line-through;
-}*/
 
 /*ul li span{
     position: absolute;
