@@ -1,8 +1,6 @@
 *{
-    margin: 0;
-    //margin: 0 auto;
-    //width: 100%;
-    padding: 0;
+    margin: 0 auto;
+    //padding: 0;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
@@ -61,10 +59,46 @@ ul li::before{
     line-height: 2rem;
     text-align: center;
     color: #fff;
-    margin-right: 0.5rem;
+    margin-right: 1.0rem;
 }
 
 .crossed-out{
     text-decoration: line-through;
+}
+
+button{
+    margin: 5px;
+    //padding: 5px;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    background-color: #EA3B52;
+    font-weight: bold;
+}
+
+#add-button{
+    width: 75px;
+    //min-height: 100vh;
+    height: 35px;
+    margin: 10px;
+    //padding: 5px;
+}
+
+#todo-form{
+    border-radius: 25px;
+    border-style: groove;
+    border-color: green;
+    display: flex;
+    //justify-content: space-between;
+}
+
+label{
+    padding: 20px;
+}
+
+input{
+    //background-color: #04AA6D;
+    border-radius: 25px;
+    //border-style: groove;
 }
 
