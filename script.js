@@ -14,16 +14,16 @@ function renderTodoList() {
     
     //Create buttons for crossing out, editing, and deleting the item
     const crossOutButton = document.createElement('button');
-    //crossOutButton.innerText = '✓';
-    crossOutButton.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+    crossOutButton.classList.add("buttons");
+    crossOutButton.innerHTML = '<i id="cross-button" class="fa-solid fa-circle-check"></i>';
     crossOutButton.addEventListener('click', () => {
       li.classList.toggle('crossed-out');
       updateSavedItems();
     });
     
     const editButton = document.createElement('button');
-    //editButton.innerText = 'Edit';
-    editButton.innerHTML = '<i class="fa-solid fa-pen"></i>';
+    editButton.classList.add("buttons");
+    editButton.innerHTML = '<i id="edit-button" class="fa-solid fa-pen"></i>';
     editButton.addEventListener('click', () => {
       const newTitle = prompt('Enter the new title for this item:', item);
       if (newTitle) {
@@ -34,8 +34,8 @@ function renderTodoList() {
     });
     
     const deleteButton = document.createElement('button');
-    //deleteButton.innerText = 'X';
-    deleteButton.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
+    deleteButton.classList.add("buttons");
+    deleteButton.innerHTML = '<i id="delete-button" class="fa-solid fa-trash-can"></i>';
     deleteButton.addEventListener('click', () => {
       savedItems.splice(index, 1);
       updateSavedItems();
