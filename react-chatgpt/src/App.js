@@ -6,6 +6,18 @@ const App = () => {
   const [previousChats, setPreviousChats] = useState([]);
   const [currentTitle, setCurrentTitle] = useState(null);
 
+  const createNewChat = () => {
+    setMessage(null);
+    setValue("");
+    setCurrentTitle(null);
+  }
+
+  const handleClick = (uniqueTitle) => {
+    setCurrentTitle(uniqueTitle);
+    setMessage(null);
+    setValue("");
+  }
+
   const getMessages = async () => {
 
     const options = {
@@ -49,12 +61,17 @@ const App = () => {
   }, [message, currentTitle])
 
   console.log(previousChats);
+  const currentChat = previousChats.filter(previousChat => previousChat.title === currentTitle);
+  const uniqueTitles = Array.from(new Set(previousChats.map(previousChat => previousChat.title)));
+  console.log(uniqueTitles);
 
   return (
     <div className="app">
       <section className="side-bar">
-        <button>+ New Chat</button>
-        <ul className="history"></ul>
+        <button onClick={createNewChat}>+ New Chat</button>
+        <ul className="history">
+          {uniqueTitles?.map((uniqueTitle, index) => <li key={index} onClick={() => handleClick(uniqueTitle)}>{uniqueTitle}</li>)}
+        </ul>
         <nav>
           <p>ChatGPT Bot</p>
         </nav>
@@ -62,7 +79,10 @@ const App = () => {
       <section className="main">
         {!currentTitle && <h1>ChatGPT</h1>}
         <ul className="feed">
-
+          {currentChat?.map((chatMessage, index) => <li key={index}>
+            <p className="role">{chatMessage.role}</p>
+            <p>{chatMessage.content}</p>
+          </li>)}
         </ul>
         <div className="bottom-section">
           <div className="input-container">
