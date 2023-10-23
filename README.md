@@ -4,7 +4,8 @@
 
 2. To do list (possible to add, edit and delete tasks; saves changes to local storage).
 
-![todo_2](https://github.com/Valda1/js-projects/assets/104151972/f4aa5b8b-1e37-4a0a-ae5a-777add7936cc)
+![todo_2](https://github.com/Valda1/js-projects/assets/104151972/ac84cd80-ea90-48d9-b2db-6c4b221397d9)
+
 
 
 
